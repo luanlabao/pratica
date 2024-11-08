@@ -14,6 +14,12 @@
       "id": "@sap/generator-fiori:basic",
       "version": "1.15.3",
       "toolsId": "cbbd20ce-18de-467d-8fe9-4e369a6ef023"
+    },
+    "dataSources": {
+      "oUsuario":{
+        "uri": "model/usuario.json",
+        "type":"JSON"
+      }
     }
   },
   "sap.ui": {
@@ -33,7 +39,7 @@
     }
   },
   "sap.ui5": {
-    "flexEnabled": true,
+    "flexEnabled": false,
     "dependencies": {
       "minUI5Version": "1.130.0",
       "libs": {
@@ -51,6 +57,10 @@
         "settings": {
           "bundleName": "mentoria.fiori.ka.praticamodel1.i18n.i18n"
         }
+      },
+      "tableData":{
+        "type":"sap.ui.model.json.JSONModel",
+        "dataSource":"oUsuario"
       }
     },
     "resources": {

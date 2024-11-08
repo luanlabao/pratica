@@ -1,0 +1,10 @@
+{
+    "Cadastro":[
+            {
+            "nome": "teste",
+            "dtNasc": "",
+            "sexo":"",
+            "altura":""
+        }
+    ]
+}

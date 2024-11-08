@@ -1,7 +1,48 @@
-<mvc:View controllerName="mentoria.fiori.ka.praticamodel1.controller.Cadastro"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-        <content />
+<mvc:View 
+xmlns:mvc="sap.ui.core.mvc" 
+xmlns="sap.m" 
+xmlns:form="sap.ui.layout.form" 
+xmlns:core="sap.ui.core"
+controllerName="mentoria.fiori.ka.praticamodel1.controller.Cadastro" 
+displayBlock="true">
+    <Page title="{i18n>title}">
+        <content>
+            <Table id="idProductsTable" items="{oModel>/Cadastro}">
+				<headerToolbar>
+					<OverflowToolbar id="otbSubheader">
+                        <ToolbarSpacer/>
+                        <OverflowToolbarButton tooltip="+Novo" type="Accept" text="+Novo" icon="sap-icon://add-employee" press="onOpenDialogNovo" />
+					</OverflowToolbar>
+				</headerToolbar>
+				<columns>
+					<Column width="20em"><Text text="Nome" /></Column>
+					<Column width="20em"><Text text="Idade" /></Column>
+					<Column hAlign="End"><Text text="Sexo" /></Column>
+					<Column hAlign="End"><Text text="Altura" /></Column>
+				</columns>
+				<items>
+					<ColumnListItem>
+                        <cells>
+                            <ObjectIdentifier text="{oModel>nome}"  />
+                            <ObjectIdentifier text="{oModel>dtNasc}" />
+                            <ObjectIdentifier text="{oModel>sexo}"  />
+                            <ObjectIdentifier text="{oModel>altura}" />
+                        </cells>
+<!-- 						<cells>
+							<ObjectIdentifier title="{Name}" text="{ProductId}" />
+							<Text text="{SupplierName}" />
+							<Text text="{Width} x {Depth} x {Height} {DimUnit}" />
+							<ObjectNumber
+									number="{
+										parts:[{path:'Price'},{path:'CurrencyCode'}],
+										type: 'sap.ui.model.type.Currency',
+										formatOptions: {showMeasure: false}
+									}"
+									unit="{CurrencyCode}" />
+						</cells> -->
+					</ColumnListItem>
+				</items>
+			</Table>
+        </content>
     </Page>
 </mvc:View>
