@@ -12,7 +12,7 @@ function (Controller,Fragment,JSONModel) {
                 "Cadastro":[
                     {
                         "nome": 'teste',
-                        "dtNasc": '01/10/2024',
+                        "dtNasc": '2022-11-10',
                         "sexo":'M',
                         "altura":0
                     }
@@ -35,7 +35,7 @@ function (Controller,Fragment,JSONModel) {
         onOpenDialogNovo: function (){
             var oView = this.getView();
 
-            if( !oView.byId("dialogKids")){
+            if( !oView.byId("dialogNovo")){
 
                 Fragment.load({
                     id: this.getView().getId(),
@@ -49,7 +49,7 @@ function (Controller,Fragment,JSONModel) {
                 }.bind(this))
 
             }else{
-                oView.byId("dialogKids").open();
+                oView.byId("dialogNovo").open();
             }
         },
         onCloseDialogNovo: function (){
@@ -64,6 +64,7 @@ function (Controller,Fragment,JSONModel) {
             aTabela.push(aCadastro);
             oTableData.setProperty("/Cadastro", aTabela);
 
+            this.onCloseDialogNovo();
         }
     });
 });
